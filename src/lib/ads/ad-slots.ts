@@ -38,6 +38,26 @@ export const AD_SLOTS: Record<string, Record<string, AdSlotSpec>> = {
   popup: {
     square: { aspectRatio: '1 / 1', maxWidth: 400, fit: 'contain' },
   },
+  // Tall vertical rail (300×1050) — sticky side rails / portrait creatives.
+  rail: {
+    portrait: { aspectRatio: '300 / 1050', maxWidth: 300, fit: 'contain' },
+  },
+  // Large landscape feature (1000×400) — hero strip / section breaks.
+  feature: {
+    wide: { aspectRatio: '1000 / 400', maxWidth: 1000, fit: 'contain' },
+  },
+  // Forced popup overlay creative. Panel dims drive the actual shape; these are
+  // approved fallback boxes (portrait 300×1050, landscape 1000×400, or square).
+  interstitial: {
+    portrait: { aspectRatio: '300 / 1050', maxWidth: 300, fit: 'contain' },
+    landscape: { aspectRatio: '1000 / 400', maxWidth: 1000, fit: 'contain' },
+    square: { aspectRatio: '1 / 1', maxWidth: 600, fit: 'contain' },
+  },
+  // Dismissible bottom anchor bar (wide, short). Panel dims drive.
+  anchor: {
+    bar: { aspectRatio: '970 / 120', maxWidth: 970, fit: 'contain' },
+    leaderboard: { aspectRatio: '970 / 90', maxWidth: 970, fit: 'contain' },
+  },
 }
 
 const DEFAULT_SPEC: AdSlotSpec = { aspectRatio: '728 / 90', maxWidth: 728, fit: 'contain' }
